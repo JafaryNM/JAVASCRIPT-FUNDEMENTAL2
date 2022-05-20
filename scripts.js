@@ -23,7 +23,7 @@ var retiremnt=function(year){
 // USING VARIABLE BEFORE DECLARED
 
 //console.log(a) --> This will return undefined 
-
+/**
 var a=23;     //--> Global excution object context
 console.log(a)
 
@@ -34,6 +34,57 @@ function foo(){
 }
 foo();
 console.log(a);
+
+
+ * SCOPING CHAIN--> Explain where you can access the variables
+ * Each function in  JavaScript Create Scope a place which variable are define acccessible
+ * lexical Scoping --> is function which is lexically  within anather function get access to the outer function
+ * 
+ */
+
+
+
+// SCOPING CHAIN
+
+var a='Hello';
+first();
+
+function first(){
+    var b='Hey';
+    second();
+    function second(){
+        var c='Hi';
+        console.log(a + " " + " " + b + " " +c )
+    }
+
+}
+
+// Different between Excution Stack and Scoping Chain
+
+var a='Hello';
+ 
+first();
+
+function first(){
+    var b='Hi';
+    second()
+    function second(){
+    var c=' Hey';
+    third()
+    }
+function third(){
+   var d='John';
+    //console.log(c);
+    console.log(a+b)
+ }
+}
+
+
+
+
+
+
+
 
 
 
