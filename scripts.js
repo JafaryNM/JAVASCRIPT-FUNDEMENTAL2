@@ -61,6 +61,8 @@ function first(){
 
 // Different between Excution Stack and Scoping Chain
 
+/*
+
 var a='Hello';
  
 first();
@@ -81,7 +83,50 @@ function third(){
 
 
 
+This Keyword--> Keyword that point to global object window objects
+Method-->This point to object that calling methods
+Note--> This is not assigned value until function where it is defined
+is called
+*/
 
+console.log(this) // Refer to window object
+
+calculateAge(1995)
+function calcAge(year){
+
+    console.log(2022-year);
+    console.log (this);
+}
+
+
+var john={
+    name:'john',
+    yearBirth: 1995,
+    calcAge:function(){
+
+        console.log(this); // Refer to the object that called method
+         
+        console.log(2022 - this.yearBirth);
+
+        function innerFunction(){
+            console.log(this);  // --> This function is not method of an object hence window object
+        }
+        innerFunction()
+
+    }
+}
+
+john.calcAge();
+
+var mike={
+    name:'Mike',
+    yearBirth:1994
+}
+
+// APPLYING METHOD BORROWING
+mike.calcAge=john.calcAge;
+
+mike.calcAge();
 
 
 
