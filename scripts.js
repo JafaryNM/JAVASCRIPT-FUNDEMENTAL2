@@ -128,6 +128,15 @@ mike.calcAge=john.calcAge;
 
 mike.calcAge();
 
+// DOM MANUPULATION
+
+/*
+DOM --> Stand for document object model
+Dom is structure representation of  HTML Documents
+Dom is used to connect web HTML and JavaScript Language
+In every HTML there dom that you can interact with it and access
+
+
 
 
 
